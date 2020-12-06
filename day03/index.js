@@ -1,3 +1,5 @@
+// section 1
+
 const { readFileSync } = require('fs')
 
 const matrix = readFileSync('./data.txt', { encoding: 'utf8' }).split('\n').map(i => i.split(''))
@@ -13,7 +15,22 @@ function countTreesInPath({ slopeX, slopeY}) {
     y += slopeY
   } while (!!matrix[y])
 
-  console.log('solution 1:', pairs.filter(i => i.char === '#').length)
+  return pairs.filter(i => i.char === '#').length
 }
 
-countTreesInPath({ slopeX: 3, slopeY: 1 })
+const result1 = countTreesInPath({ slopeX: 3, slopeY: 1 })
+console.log('solution 1: ', result1)
+
+ // section 2
+
+const slopes = [
+  { slopeX: 1, slopeY: 1 },
+  { slopeX: 3, slopeY: 1 },
+  { slopeX: 5, slopeY: 1 },
+  { slopeX: 7, slopeY: 1 },
+  { slopeX: 1, slopeY: 2 }
+]
+
+const result2 = slopes.map(countTreesInPath).reduce((a, b) => a * b)
+
+console.log('solution 2: ', result2)
