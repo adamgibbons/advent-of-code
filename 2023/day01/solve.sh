@@ -1,0 +1,1 @@
+cat data.txt | node index.js
