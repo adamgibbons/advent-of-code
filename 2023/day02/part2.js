@@ -29,5 +29,6 @@ process.stdin.on("data", data => {
     }).map(({ blue, red, green }) => {
         return blue * red * green
     }).reduce((a, b) => a + b)
+  
     process.stdout.write(result + "\n")
 })

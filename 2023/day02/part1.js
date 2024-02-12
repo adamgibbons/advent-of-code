@@ -1,13 +1,10 @@
 
 process.stdin.on("data", data => {
-
     const restrictions = {
         red: 12,
         green: 13,
         blue: 14
     }
-    // const result = data.toString()
-    // .split('\n')
 
     function getTotal(str) {
         return str.split(' ').slice(2).reverse().reduce((acc, current, idx, arr) => {
@@ -37,5 +34,6 @@ process.stdin.on("data", data => {
     }).reduce((acc, current) => {
         return acc + current.idx
     }, 0)
+
     process.stdout.write(String(result) + "\n")
 })
