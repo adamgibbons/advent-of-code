@@ -1,0 +1,1 @@
+cat data.txt | node part1.js
